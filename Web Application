@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Power Monitoring Circuit Diagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        svg {
+            border: 1px solid #ccc;
+            margin: 20px auto;
+            display: block;
+        }
+        .component {
+            font-size: 14px;
+            fill: #000;
+        }
+        .line {
+            stroke: #000;
+            stroke-width: 2;
+        }
+        .label {
+            font-size: 12px;
+            fill: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>IoT Power Monitoring Circuit Diagram</h1>
+    <svg width="1000" height="700">
+        <!-- Raspberry Pi -->
+        <rect x="50" y="50" width="200" height="100" fill="#1E90FF" />
+        <text x="100" y="100" class="component">Raspberry Pi</text>
+
+        <!-- MCP3008 -->
+        <rect x="300" y="80" width="150" height="50" fill="#32CD32" />
+        <text x="325" y="110" class="component">MCP3008</text>
+
+        <!-- ZMPT101B (1) -->
+        <rect x="600" y="50" width="150" height="50" fill="#FF6347" />
+        <text x="625" y="80" class="component">ZMPT101B (1)</text>
+
+        <!-- ZMPT101B (2) -->
+        <rect x="600" y="130" width="150" height="50" fill="#FF6347" />
+        <text x="625" y="160" class="component">ZMPT101B (2)</text>
+
+        <!-- SCT013 (1) -->
+        <rect x="600" y="250" width="150" height="50" fill="#FFD700" />
+        <text x="625" y="280" class="component">SCT013 (1)</text>
+
+        <!-- SCT013 (2) -->
+        <rect x="600" y="330" width="150" height="50" fill="#FFD700" />
+        <text x="625" y="360" class="component">SCT013 (2)</text>
+
+        <!-- Connections -->
+        <!-- Raspberry Pi to MCP3008 -->
+        <line x1="250" y1="100" x2="300" y2="105" class="line" />
+        <text x="260" y="90" class="label">SPI</text>
+
+        <!-- MCP3008 to ZMPT101B (1) -->
+        <line x1="450" y1="105" x2="600" y2="75" class="line" />
+        <text x="500" y="65" class="label">CH0</text>
+
+        <!-- MCP3008 to ZMPT101B (2) -->
+        <line x1="450" y1="105" x2="600" y2="155" class="line" />
+        <text x="500" y="135" class="label">CH1</text>
+
+        <!-- MCP3008 to SCT013 (1) -->
+        <line x1="450" y1="105" x2="600" y2="275" class="line" />
+        <text x="500" y="240" class="label">CH2</text>
+
+        <!-- MCP3008 to SCT013 (2) -->
+        <line x1="450" y1="105" x2="600" y2="355" class="line" />
+        <text x="500" y="320" class="label">CH3</text>
+    </svg>
+</body>
+</html>
